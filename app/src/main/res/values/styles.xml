@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textViewStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/rounded_textview</item>
+
+
+    </style>
+
+    <style name="button_style">
+        <item name="android:background">@drawable/rounded_button</item>
+    </style>
+
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="statusBarForeground">@color/accentColor</item>
+    </style>
+</resources>

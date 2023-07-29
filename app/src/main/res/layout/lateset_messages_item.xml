@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginStart="16dp"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageview_latestchat"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:civ_border_color="@color/primaryColor"
+        app:civ_border_width="3dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="@color/white"
+        app:civ_shadow_radius="1dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username_latestchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="UserName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lastChat_latestchat"
+        app:layout_constraintEnd_toEndOf="@+id/lastChat_latestchat"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toEndOf="@+id/imageview_latestchat"
+        app:layout_constraintTop_toTopOf="@+id/imageview_latestchat"
+        tools:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/lastChat_latestchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+
+        android:text="last message sent here"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview_latestchat"
+        app:layout_constraintEnd_toStartOf="@+id/day_textview"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/imageview_latestchat"
+        tools:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/day_textview"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="day"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textColor="@color/black" />
+</androidx.constraintlayout.widget.ConstraintLayout>
