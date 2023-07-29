@@ -125,11 +125,11 @@ class RegisterActivity : AppCompatActivity() {
         //Getting instance of the firebase storage such as firebase authentication and we set the location of the file in the storage then our name ,
         // Then we upload the image using putFile , and we get the image url to store it in the database
         val reference = FirebaseStorage.getInstance().getReference("/images/$fileName")
-        reference.putFile(selectedPhotoUri!!).addOnSuccessListener { data ->
-            Log.i(tag, "sss image successfully uploaded with path ${data.metadata?.path}")
+        reference.putFile(selectedPhotoUri!!).addOnSuccessListener {
+            Log.i(tag, "sss image successfully uploaded with path ${it.metadata?.path}")
             reference.downloadUrl.addOnSuccessListener {
-                Log.i(tag, "sss image url is $data")
-                saveUserToFirebaseDatabase(data.toString())
+                Log.i(tag, "sss image url is $it")
+                saveUserToFirebaseDatabase(it.toString())
             }.addOnFailureListener {
                 Toast.makeText(this@RegisterActivity, "${it.message}", Toast.LENGTH_SHORT).show()
             }

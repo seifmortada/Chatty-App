@@ -111,7 +111,6 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     private fun getMessageInfoFromFirebase() {
-        loading(true)
         val fromId = FirebaseAuth.getInstance().uid
         val toId = user.uid
         val reference = Firebase.database.getReference("/user-messages/$fromId/$toId")
@@ -128,7 +127,6 @@ class ChatLogActivity : AppCompatActivity() {
                     com.example.chatyapp.NotificationUtil().notificationBuilder(
                         this@ChatLogActivity, messageInfo!!.toId, messageInfo.text
                     )
-                    loading(false)
                     createNotificationChannel()
                     adapter.add(FriendAdapter(messageInfo.text, imageFriend))
                 }
@@ -151,10 +149,5 @@ class ChatLogActivity : AppCompatActivity() {
 
     }
 
-    private fun loading(b: Boolean) {
-        if (b==true) {
-            binding.progressBar2.visibility = View.VISIBLE
-        } else binding.progressBar2.visibility = View.GONE
 
-    }
 }
